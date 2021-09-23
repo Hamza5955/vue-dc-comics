@@ -5,45 +5,13 @@
         <h2>Content goess here</h2>
       </div>
       <div class="blu">
-        <div>
-          <img
-            class="resize"
-            src="../assets/img/buy-comics-digital-comics.png"
-            alt="vue-test\src\assets\img"
-          />
-          <div>digital comics</div>
-        </div>
-        <div>
-          <img
-            class="resize"
-            src="..\assets\img\buy-comics-digital-comics.png"
-            alt=""
-          />
-          <div>dc merchandise</div>
-        </div>
-        <div>
-          <img
-            class="resize"
-            src="..\assets\img\buy-comics-digital-comics.png"
-            alt=""
-          />
-          <div>subscription</div>
-        </div>
-        <div>
-          <img
-            class="resize"
-            src="..\assets\img\buy-comics-digital-comics.png"
-            alt=""
-          />
-          <div>comic shop locator</div>
-        </div>
-        <div>
-          <img
-            class="resize"
-            src="..\assets\img\buy-comics-digital-comics.png"
-            alt=""
-          />
-          <div>dc power visa</div>
+        <div class="w-70">
+          <li class="special" v-for="(icon, index) in specials" :key="index">
+            <img :src="require(`../assets/img/${icon.img}`)" />
+            <div class="nome">
+              {{ icon.nome }}
+            </div>
+          </li>
         </div>
       </div>
     </div>
@@ -51,8 +19,12 @@
 </template>
 
 <script>
+import specials from "@/assets/data/Specials.js";
 export default {
   name: "Main",
+  data() {
+    return { specials };
+  },
 };
 </script>
 <style scoped lang="scss">
@@ -69,6 +41,7 @@ export default {
   color: white;
   align-items: center;
   flex-direction: row;
+  margin-right: 50%;
 }
 .blu {
   display: flex;
@@ -77,6 +50,7 @@ export default {
   background-color: rgb(12, 77, 180);
   justify-content: space-around;
   align-items: center;
+  list-style: none;
 }
 .blu > div {
   display: flex;
@@ -84,5 +58,17 @@ export default {
 }
 .resize {
   width: 30px;
+}
+.special {
+  width: 50%;
+}
+.w-70 {
+  flex-direction: row;
+}
+img {
+  height: 70px;
+}
+.nome {
+  color: azure;
 }
 </style>
