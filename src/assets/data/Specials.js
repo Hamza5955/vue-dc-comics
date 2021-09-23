@@ -5,7 +5,7 @@ export default [
   },
   {
     img: "buy-comics-merchandise.png",
-    nome: "DC merchandise",
+    nome: "DCmerchandise",
   },
   {
     img: "buy-comics-merchandise.png",

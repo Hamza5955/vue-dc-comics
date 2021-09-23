@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div class="container">
-      <div class="nero">
+    <div class="containers">
+      <!-- <div class="nero">
         <h2>Content goess here</h2>
-      </div>
+      </div> -->
       <div class="blu">
-        <div class="w-70">
+        <div class="w-700">
           <li class="special" v-for="(icon, index) in specials" :key="index">
             <img :src="require(`../assets/img/${icon.img}`)" />
             <div class="nome">
@@ -28,11 +28,6 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-.container {
-  width: 100%;
-  height: 300px;
-  background-color: black;
-}
 .nero {
   display: flex;
   width: 90%;
@@ -60,6 +55,7 @@ export default {
   width: 30px;
 }
 .special {
+  display: flex;
   width: 50%;
 }
 .w-70 {
@@ -70,5 +66,9 @@ img {
 }
 .nome {
   color: azure;
+  height: 50%;
+  margin-left: 30px;
+  margin-top: 25px;
+  display: inline;
 }
 </style>
